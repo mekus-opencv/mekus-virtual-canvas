@@ -1,7 +1,7 @@
 # 🖌️ OpenCV Mini Project: Mekus Virtual Canvas
 
 ## 📋 Requirements
-- Python `3.12`
+- Python `3.12` or earlier
 - Install dependencies from `requirements.txt` using:
   ```bash
   pip install -r requirements.txt
@@ -24,7 +24,7 @@ Built with two core modules:
 
 ## 🛠️ Getting Started
 To run the project:
-1. Ensure Python 3.12 is installed
+1. Ensure Python 3.12 or below is installed
 2. Install required packages
 3. Launch the main script to start the virtual canvas
 
