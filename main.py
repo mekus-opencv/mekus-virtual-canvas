@@ -256,7 +256,6 @@ class VirtualCanvas:
         self.toggle_ui_states(button)
         self.select_color(button)
         self.select_size(button)
-        self.select_shape(button)
         self.clear_canvas(button)
 
     def toggle_ui_states(self, button):
@@ -289,12 +288,6 @@ class VirtualCanvas:
         """Change the brush size based on the selected pen size button."""
         if button in self.menu.pen_size_buttons:
             self.brush_size = button.value
-
-    def select_shape(self, button):
-        """Select the drawing tool based on the clicked shape button."""
-        if button in self.menu.shape_buttons:
-            self.current_tool = button.label
-            self.is_eraser = False
 
     def clear_canvas(self, button):
         """Clear the entire canvas when the clear button is pressed."""
