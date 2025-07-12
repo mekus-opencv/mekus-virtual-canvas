@@ -210,6 +210,7 @@ class HandTracker:
         )
 
     def toggle_drawing_mode(self):
+        """Toggle the drawing mode on or off."""
         self.is_drawing_mode = not self.is_drawing_mode
 
     def detect_click(self):
