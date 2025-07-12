@@ -35,4 +35,4 @@ To run the project:
 ## 📘 User Guideline
 - To learn how to use the Mekus Virtual Canvas, follow the step-by-step  
   guide in the link provided below:  
-- 🔗 https://drive.google.com/drive/folders/1JQTS4S4H4KdquFZ01wRtls-9poVSwTZO?usp=drive_link
+- 🔗 https://drive.google.com/file/d/1G2_vExbRaFzpPnBUdVJJriXexaPmHOx-/view?usp=drive_link
