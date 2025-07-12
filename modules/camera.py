@@ -8,8 +8,8 @@ class Camera:
     """
 
     DEFAULT_CAMERA_INDEX = 0
-    DEFAULT_WIDTH = 640
-    DEFAULT_HEIGHT = 480
+    DEFAULT_WIDTH = 1280
+    DEFAULT_HEIGHT = 720
 
     def __init__(
         self,
