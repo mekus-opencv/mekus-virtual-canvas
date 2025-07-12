@@ -98,7 +98,9 @@ class Menu:
     COLOR_OFFSET_X = 80
 
     def __init__(self, board_toggle_pos, pen_toggle_pos):
-        """Initialize the menu with toggle positions and button configurations."""
+        """
+        Initialize the menu with toggle positions and button configurations.
+        """
         self.board_toggle_pos = board_toggle_pos
         self.pen_toggle_pos = pen_toggle_pos
         self.last_message = ""
@@ -180,7 +182,10 @@ class Menu:
         )
 
     def create_toggle_buttons(self):
-        """Create toggle buttons for board visibility, pen size, colors, and eraser."""
+        """
+        Create toggle buttons for board visibility, 
+        pen size, colors, and eraser.
+        """
         self.board_toggle = CircleButton(
             *self.board_toggle_pos,
             self.TOGGLE_RADIUS,
