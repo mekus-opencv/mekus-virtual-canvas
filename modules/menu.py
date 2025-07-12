@@ -267,6 +267,7 @@ class Menu:
                 )
 
     def draw_label(self, frame, text, center_x, center_y):
+        """Draw a label centered at the specified coordinates."""
         text_size = cv.getTextSize(text, FONT, TEXT_SCALE, TEXT_THICKNESS)[0]
         text_x = center_x - text_size[0] // 2
         text_y = center_y + text_size[1] // 2
@@ -342,6 +343,7 @@ class Menu:
         return None
 
     def get_all_buttons(self):
+        """return a list of all buttons in the menu."""
         return [
             self.clear_button,
             *self.color_buttons,
