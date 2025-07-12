@@ -31,3 +31,8 @@ To run the project:
 ## ✨ Key Features
 - Draw and change filters using finger gestures tracked in real time
 - Switch colors and modes via simple hand positions
+
+## 📘 User Guideline
+- To learn how to use the Mekus Virtual Canvas, follow the step-by-step  
+  guide in the link provided below:  
+- 🔗 https://drive.google.com/drive/folders/1JQTS4S4H4KdquFZ01wRtls-9poVSwTZO?usp=drive_link
