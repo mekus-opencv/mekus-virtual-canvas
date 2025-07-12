@@ -1,4 +1,4 @@
-import cv2
+import cv2 as cv
 import threading
 
 class Camera:
@@ -17,14 +17,7 @@ class Camera:
         width=DEFAULT_WIDTH,
         height=DEFAULT_HEIGHT
     ):
-        """
-        Initialize the camera with specified parameters.
-
-        Args:
-            camera_index (int): Index of the camera (default: 0).
-            width (int): Desired frame width in pixels (default: 640).
-            height (int): Desired frame height in pixels (default: 480).
-        """
+        """Initialize the camera with specified parameters."""
         self.camera_index = camera_index
         self.width = width
         self.height = height
@@ -37,19 +30,15 @@ class Camera:
         self.frame_lock = threading.Lock()
 
     def open(self):
-        """Open the camera and set frame properties.
-
-        Raises:
-            RuntimeError: If camera cannot be opened.
-        """
-        self.cap = cv2.VideoCapture(self.camera_index)
+        """Open the camera and set frame properties."""
+        self.cap = cv.VideoCapture(self.camera_index)
 
         if not self.cap.isOpened():
             error_msg = f"Cannot open camera with index {self.camera_index}"
             raise RuntimeError(error_msg)
 
-        self.cap.set(cv2.CAP_PROP_FRAME_WIDTH, self.width)
-        self.cap.set(cv2.CAP_PROP_FRAME_HEIGHT, self.height)
+        self.cap.set(cv.CAP_PROP_FRAME_WIDTH, self.width)
+        self.cap.set(cv.CAP_PROP_FRAME_HEIGHT, self.height)
 
     def update_frame(self):
         """Continuously capture frames in a background thread."""
@@ -85,7 +74,7 @@ class Camera:
         """
         if self.is_running:
             return self.get_latest_frame()
-        
+
         return self.get_immediate_frame()
 
     def get_latest_frame(self):
@@ -93,7 +82,7 @@ class Camera:
         with self.frame_lock:
             if self.latest_frame is None:
                 raise RuntimeError("No frame available yet.")
-            
+
             return self.latest_frame.copy()
 
     def get_immediate_frame(self):
@@ -104,7 +93,7 @@ class Camera:
         ret, frame = self.cap.read()
         if not ret:
             raise RuntimeError("Failed to read frame from camera.")
-        
+
         return frame
 
     def stop(self):
@@ -113,7 +102,7 @@ class Camera:
             return
 
         self.is_running = False
-        
+
         if self.capture_thread is not None:
             self.capture_thread.join()
             self.capture_thread = None
@@ -129,25 +118,12 @@ class Camera:
         self.cap = None
 
     def enter(self):
-        """Context manager entry point.
-
-        Returns:
-            Camera: The initialized camera object.
-        """
+        """Context manager entry point."""
         self.open()
         return self
 
     def exit(self, exc_type, exc_val, exc_tb):
-        """Context manager exit point.
-
-        Args:
-            exc_type: Exception type if any occurred.
-            exc_val: Exception value if any occurred.
-            exc_tb: Exception traceback if any occurred.
-
-        Returns:
-            bool: False to propagate exceptions.
-        """
+        """Context manager exit point."""
         self.release()
 
         if exc_type is not None:
